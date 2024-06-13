@@ -1,5 +1,5 @@
-Analysis & Elaboration report for CPU_FINAL_V2
-Wed Jun 12 18:22:15 2024
+Analysis & Synthesis report for CPU_FINAL_V2
+Thu Jun 13 01:28:16 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -7,23 +7,31 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: CPU:C1|controller:a3
-  5. Analysis & Elaboration Settings
-  6. Port Connectivity Checks: "CPU:C1|ALU:b2|logic:l1"
-  7. Port Connectivity Checks: "CPU:C1|ALU:b2|arith:a1"
-  8. Port Connectivity Checks: "CPU:C1|ALU:b2"
-  9. Port Connectivity Checks: "CPU:C1|muxA:b1"
- 10. Port Connectivity Checks: "CPU:C1|datamem:a9"
- 11. Port Connectivity Checks: "CPU:C1|register_bank:reg_bank"
- 12. Port Connectivity Checks: "CPU:C1|muxB:a5"
- 13. Port Connectivity Checks: "CPU:C1|PC:a4"
- 14. Port Connectivity Checks: "CPU:C1|insReg:a2"
- 15. Port Connectivity Checks: "CPU:C1|instmem:a1"
- 16. Port Connectivity Checks: "CPU:C1"
- 17. Analysis & Elaboration Messages
- 18. Analysis & Elaboration Suppressed Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |CPU|controller:a3|state
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Parameter Settings for User Entity Instance: controller:a3
+ 13. Port Connectivity Checks: "ALU:b2|logic:l1"
+ 14. Port Connectivity Checks: "ALU:b2|arith:a1"
+ 15. Port Connectivity Checks: "ALU:b2"
+ 16. Port Connectivity Checks: "muxA:b1"
+ 17. Port Connectivity Checks: "datamem:a9"
+ 18. Port Connectivity Checks: "register_bank:reg_bank"
+ 19. Port Connectivity Checks: "muxB:a5"
+ 20. Port Connectivity Checks: "PC:a4"
+ 21. Port Connectivity Checks: "insReg:a2"
+ 22. Port Connectivity Checks: "instmem:a1"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -48,62 +56,34 @@ https://fpgasoftware.intel.com/eula.
 
 
 +----------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                   ;
+; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Wed Jun 12 18:22:15 2024       ;
+; Analysis & Synthesis Status        ; Successful - Thu Jun 13 01:28:16 2024       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; CPU_FINAL_V2                                ;
-; Top-level Entity Name              ; tb_CPU                                      ;
+; Top-level Entity Name              ; CPU                                         ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 52                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: CPU:C1|controller:a3 ;
-+----------------+-------+------------------------------------------+
-; Parameter Name ; Value ; Type                                     ;
-+----------------+-------+------------------------------------------+
-; reset          ; 000   ; Unsigned Binary                          ;
-; load           ; 010   ; Unsigned Binary                          ;
-; execute        ; 100   ; Unsigned Binary                          ;
-+----------------+-------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                            ;
+; Analysis & Synthesis Settings                                                                              ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; 10M08DAF484C8G     ;                    ;
-; Top-level entity name                                            ; tb_CPU             ; CPU_FINAL_V2       ;
+; Top-level entity name                                            ; CPU                ; CPU_FINAL_V2       ;
 ; Family name                                                      ; MAX 10             ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -183,8 +163,1306 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                        ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                          ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
+; ALU.v                            ; yes             ; User Verilog HDL File  ; C:/Users/artur/Downloads/CPU_FINAL_V2/ALU.v           ;         ;
+; arith.v                          ; yes             ; User Verilog HDL File  ; C:/Users/artur/Downloads/CPU_FINAL_V2/arith.v         ;         ;
+; logic.v                          ; yes             ; User Verilog HDL File  ; C:/Users/artur/Downloads/CPU_FINAL_V2/logic.v         ;         ;
+; controller.v                     ; yes             ; User Verilog HDL File  ; C:/Users/artur/Downloads/CPU_FINAL_V2/controller.v    ;         ;
+; CPU.v                            ; yes             ; User Verilog HDL File  ; C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v           ;         ;
+; register_bank.v                  ; yes             ; User Verilog HDL File  ; C:/Users/artur/Downloads/CPU_FINAL_V2/register_bank.v ;         ;
+; instmem.v                        ; yes             ; User Verilog HDL File  ; C:/Users/artur/Downloads/CPU_FINAL_V2/instmem.v       ;         ;
+; insReg.v                         ; yes             ; User Verilog HDL File  ; C:/Users/artur/Downloads/CPU_FINAL_V2/insReg.v        ;         ;
+; PC.v                             ; yes             ; User Verilog HDL File  ; C:/Users/artur/Downloads/CPU_FINAL_V2/PC.v            ;         ;
+; muxB.v                           ; yes             ; User Verilog HDL File  ; C:/Users/artur/Downloads/CPU_FINAL_V2/muxB.v          ;         ;
+; datamem.v                        ; yes             ; User Verilog HDL File  ; C:/Users/artur/Downloads/CPU_FINAL_V2/datamem.v       ;         ;
+; muxA.v                           ; yes             ; User Verilog HDL File  ; C:/Users/artur/Downloads/CPU_FINAL_V2/muxA.v          ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 52    ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; we_IM ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 52    ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; |CPU                       ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 52   ; 0            ; 0          ; |CPU                ; CPU         ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------+
+; State Machine - |CPU|controller:a3|state                 ;
++---------------+-------------+---------------+------------+
+; Name          ; state.reset ; state.execute ; state.load ;
++---------------+-------------+---------------+------------+
+; state.reset   ; 0           ; 0             ; 0          ;
+; state.load    ; 1           ; 0             ; 1          ;
+; state.execute ; 1           ; 1             ; 0          ;
++---------------+-------------+---------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                 ;
++------------------------------------------------+---------------------------------------------------+
+; Register name                                  ; Reason for Removal                                ;
++------------------------------------------------+---------------------------------------------------+
+; muxA:b1|outA[0..31]                            ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[31][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[31][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[30][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[29][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[28][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[27][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[26][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[25][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[24][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[23][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[22][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[21][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[20][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[19][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[18][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[17][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[16][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[15][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[14][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[13][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[12][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[11][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][0]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][1]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][2]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][3]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][4]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][5]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][6]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][7]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][8]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][9]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][10]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][11]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][12]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][13]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][14]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][15]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][16]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][17]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][18]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][19]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][20]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][21]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][22]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][23]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][24]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][25]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][26]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][27]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][28]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][29]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][30]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[10][31]       ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][0]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][1]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][2]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][3]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][4]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][5]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][6]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][7]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][8]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][9]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][10]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][11]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][12]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][13]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][14]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][15]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][16]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][17]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][18]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][19]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][20]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][21]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][22]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][23]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][24]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][25]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][26]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][27]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][28]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][29]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][30]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[9][31]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][0]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][1]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][2]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][3]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][4]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][5]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][6]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][7]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][8]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][9]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][10]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][11]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][12]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][13]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][14]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][15]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][16]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][17]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][18]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][19]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][20]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][21]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][22]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][23]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][24]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][25]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][26]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][27]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][28]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][29]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][30]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[8][31]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][0]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][1]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][2]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][3]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][4]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][5]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][6]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][7]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][8]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][9]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][10]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][11]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][12]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][13]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][14]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][15]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][16]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][17]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][18]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][19]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][20]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][21]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][22]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][23]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][24]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][25]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][26]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][27]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][28]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][29]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][30]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[7][31]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][0]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][1]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][2]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][3]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][4]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][5]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][6]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][7]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][8]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][9]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][10]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][11]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][12]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][13]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][14]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][15]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][16]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][17]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][18]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][19]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][20]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][21]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][22]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][23]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][24]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][25]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][26]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][27]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][28]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][29]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][30]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[6][31]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][0]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][1]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][2]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][3]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][4]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][5]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][6]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][7]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][8]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][9]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][10]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][11]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][12]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][13]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][14]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][15]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][16]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][17]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][18]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][19]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][20]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][21]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][22]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][23]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][24]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][25]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][26]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][27]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][28]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][29]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][30]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[5][31]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][0]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][1]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][2]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][3]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][4]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][5]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][6]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][7]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][8]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][9]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][10]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][11]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][12]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][13]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][14]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][15]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][16]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][17]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][18]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][19]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][20]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][21]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][22]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][23]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][24]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][25]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][26]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][27]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][28]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][29]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][30]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[4][31]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][0]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][1]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][2]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][3]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][4]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][5]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][6]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][7]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][8]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][9]         ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][10]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][11]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][12]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][13]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][14]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][15]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][16]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][17]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][18]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][19]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][20]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][21]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][22]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][23]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][24]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][25]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][26]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][27]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][28]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][29]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][30]        ; Stuck at GND due to stuck port clock_enable       ;
+; register_bank:reg_bank|registers[3][31]        ; Stuck at GND due to stuck port clock_enable       ;
+; PC:a4|execadd[0]                               ; Lost fanout                                       ;
+; datamem:a9|outDM[0..9]                         ; Stuck at GND due to stuck port data_in            ;
+; register_bank:reg_bank|registers[2][0]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][1]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][2]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][3]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][4]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][5]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][6]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][7]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][8]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][9]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][10]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][11]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][12]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][13]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][14]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][15]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][16]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][17]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][18]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][19]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][20]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][21]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][22]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][23]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][24]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][25]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][26]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][27]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][28]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][29]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][30]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[2][31]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][0]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][1]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][2]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][3]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][4]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][5]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][6]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][7]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][8]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][9]         ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][10]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][11]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][12]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][13]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][14]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][15]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][16]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][17]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][18]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][19]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][20]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][21]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][22]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][23]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][24]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][25]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][26]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][27]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][28]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][29]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][30]        ; Lost fanout                                       ;
+; register_bank:reg_bank|registers[1][31]        ; Lost fanout                                       ;
+; muxB:a5|outB[0..3]                             ; Lost fanout                                       ;
+; PC:a4|temp[0..11]                              ; Lost fanout                                       ;
+; insReg:a2|opcode[0..3]                         ; Lost fanout                                       ;
+; insReg:a2|address[0..11]                       ; Lost fanout                                       ;
+; insReg:a2|temp[0..15]                          ; Lost fanout                                       ;
+; instmem:a1|outIM[0..15]                        ; Lost fanout                                       ;
+; register_bank:reg_bank|read_dataA[0]           ; Merged with register_bank:reg_bank|read_dataB[0]  ;
+; register_bank:reg_bank|read_dataA[1]           ; Merged with register_bank:reg_bank|read_dataB[1]  ;
+; register_bank:reg_bank|read_dataA[2]           ; Merged with register_bank:reg_bank|read_dataB[2]  ;
+; register_bank:reg_bank|read_dataA[3]           ; Merged with register_bank:reg_bank|read_dataB[3]  ;
+; register_bank:reg_bank|read_dataA[4]           ; Merged with register_bank:reg_bank|read_dataB[4]  ;
+; register_bank:reg_bank|read_dataA[5]           ; Merged with register_bank:reg_bank|read_dataB[5]  ;
+; register_bank:reg_bank|read_dataA[6]           ; Merged with register_bank:reg_bank|read_dataB[6]  ;
+; register_bank:reg_bank|read_dataA[7]           ; Merged with register_bank:reg_bank|read_dataB[7]  ;
+; register_bank:reg_bank|read_dataA[8]           ; Merged with register_bank:reg_bank|read_dataB[8]  ;
+; register_bank:reg_bank|read_dataA[9]           ; Merged with register_bank:reg_bank|read_dataB[9]  ;
+; register_bank:reg_bank|read_dataA[10]          ; Merged with register_bank:reg_bank|read_dataB[10] ;
+; register_bank:reg_bank|read_dataA[11]          ; Merged with register_bank:reg_bank|read_dataB[11] ;
+; register_bank:reg_bank|read_dataA[12]          ; Merged with register_bank:reg_bank|read_dataB[12] ;
+; register_bank:reg_bank|read_dataA[13]          ; Merged with register_bank:reg_bank|read_dataB[13] ;
+; register_bank:reg_bank|read_dataA[14]          ; Merged with register_bank:reg_bank|read_dataB[14] ;
+; register_bank:reg_bank|read_dataA[15]          ; Merged with register_bank:reg_bank|read_dataB[15] ;
+; register_bank:reg_bank|read_dataA[16]          ; Merged with register_bank:reg_bank|read_dataB[16] ;
+; register_bank:reg_bank|read_dataA[17]          ; Merged with register_bank:reg_bank|read_dataB[17] ;
+; register_bank:reg_bank|registers[0][18]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataA[18]          ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][22]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][10]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][16]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][26]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][8]         ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][20]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][4]         ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][24]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][12]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][31]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][28]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][7]         ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][17]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][3]         ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][19]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][9]         ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][21]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][1]         ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][23]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][11]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][25]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][5]         ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][27]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][13]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][15]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][29]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][0]         ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][2]         ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][6]         ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][14]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|registers[0][30]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataA[22]          ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataB[10,16,22]    ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataA[26]          ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataB[8,26]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataA[20]          ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataB[4,20]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataA[24]          ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataB[12,24]       ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataA[31]          ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataB[31]          ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataA[28]          ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataB[3,7,17,28]   ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataA[19]          ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataB[9,19]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataA[21]          ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataB[1,21]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataA[23]          ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataB[11,23]       ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataA[25]          ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataB[5,25]        ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataA[27]          ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataB[13,15,27]    ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataA[29]          ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataB[0,2,6,14,29] ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataA[30]          ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataB[30]          ; Merged with register_bank:reg_bank|read_dataB[18] ;
+; register_bank:reg_bank|read_dataB[18]          ; Stuck at GND due to stuck port data_in            ;
+; controller:a3|state.reset                      ; Lost fanout                                       ;
+; controller:a3|state.execute                    ; Lost fanout                                       ;
+; controller:a3|state~5                          ; Lost fanout                                       ;
+; controller:a3|state.load                       ; Lost fanout                                       ;
+; Total Number of Removed Registers = 1199       ;                                                   ;
++------------------------------------------------+---------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                         ;
++------------------------------------------+--------------------------------+-----------------------------------------------------------------------------------------+
+; Register name                            ; Reason for Removal             ; Registers Removed due to This Register                                                  ;
++------------------------------------------+--------------------------------+-----------------------------------------------------------------------------------------+
+; register_bank:reg_bank|registers[31][0]  ; Stuck at GND                   ; register_bank:reg_bank|registers[2][0], register_bank:reg_bank|registers[1][0],         ;
+;                                          ; due to stuck port clock_enable ; insReg:a2|address[0], insReg:a2|address[1], insReg:a2|address[2], insReg:a2|address[3], ;
+;                                          ;                                ; insReg:a2|address[4], insReg:a2|temp[0], insReg:a2|temp[1], insReg:a2|temp[2],          ;
+;                                          ;                                ; insReg:a2|temp[3], insReg:a2|temp[4], instmem:a1|outIM[0], instmem:a1|outIM[1],         ;
+;                                          ;                                ; instmem:a1|outIM[2], instmem:a1|outIM[3], instmem:a1|outIM[4]                           ;
+; register_bank:reg_bank|registers[31][1]  ; Stuck at GND                   ; register_bank:reg_bank|registers[2][1], register_bank:reg_bank|registers[1][1]          ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][2]  ; Stuck at GND                   ; register_bank:reg_bank|registers[2][2], register_bank:reg_bank|registers[1][2]          ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][3]  ; Stuck at GND                   ; register_bank:reg_bank|registers[2][3], register_bank:reg_bank|registers[1][3]          ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][4]  ; Stuck at GND                   ; register_bank:reg_bank|registers[2][4], register_bank:reg_bank|registers[1][4]          ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][5]  ; Stuck at GND                   ; register_bank:reg_bank|registers[2][5], register_bank:reg_bank|registers[1][5]          ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][6]  ; Stuck at GND                   ; register_bank:reg_bank|registers[2][6], register_bank:reg_bank|registers[1][6]          ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][7]  ; Stuck at GND                   ; register_bank:reg_bank|registers[2][7], register_bank:reg_bank|registers[1][7]          ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][8]  ; Stuck at GND                   ; register_bank:reg_bank|registers[2][8], register_bank:reg_bank|registers[1][8]          ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][9]  ; Stuck at GND                   ; register_bank:reg_bank|registers[2][9], register_bank:reg_bank|registers[1][9]          ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][10] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][10], register_bank:reg_bank|registers[1][10]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][11] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][11], register_bank:reg_bank|registers[1][11]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][12] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][12], register_bank:reg_bank|registers[1][12]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][13] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][13], register_bank:reg_bank|registers[1][13]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][14] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][14], register_bank:reg_bank|registers[1][14]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][15] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][15], register_bank:reg_bank|registers[1][15]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][16] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][16], register_bank:reg_bank|registers[1][16]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][17] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][17], register_bank:reg_bank|registers[1][17]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][18] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][18], register_bank:reg_bank|registers[1][18]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][19] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][19], register_bank:reg_bank|registers[1][19]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][20] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][20], register_bank:reg_bank|registers[1][20]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][21] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][21], register_bank:reg_bank|registers[1][21]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][22] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][22], register_bank:reg_bank|registers[1][22]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][23] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][23], register_bank:reg_bank|registers[1][23]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][24] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][24], register_bank:reg_bank|registers[1][24]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][25] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][25], register_bank:reg_bank|registers[1][25]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][26] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][26], register_bank:reg_bank|registers[1][26]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][27] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][27], register_bank:reg_bank|registers[1][27]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][28] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][28], register_bank:reg_bank|registers[1][28]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][29] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][29], register_bank:reg_bank|registers[1][29]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][30] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][30], register_bank:reg_bank|registers[1][30]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; register_bank:reg_bank|registers[31][31] ; Stuck at GND                   ; register_bank:reg_bank|registers[2][31], register_bank:reg_bank|registers[1][31]        ;
+;                                          ; due to stuck port clock_enable ;                                                                                         ;
+; insReg:a2|opcode[1]                      ; Lost Fanouts                   ; insReg:a2|temp[13], instmem:a1|outIM[13]                                                ;
+; insReg:a2|opcode[0]                      ; Lost Fanouts                   ; insReg:a2|temp[12], instmem:a1|outIM[12]                                                ;
+; insReg:a2|opcode[2]                      ; Lost Fanouts                   ; insReg:a2|temp[14], instmem:a1|outIM[14]                                                ;
+; insReg:a2|opcode[3]                      ; Lost Fanouts                   ; insReg:a2|temp[15], instmem:a1|outIM[15]                                                ;
+; insReg:a2|address[5]                     ; Lost Fanouts                   ; insReg:a2|temp[5], instmem:a1|outIM[5]                                                  ;
+; insReg:a2|address[6]                     ; Lost Fanouts                   ; insReg:a2|temp[6], instmem:a1|outIM[6]                                                  ;
+; insReg:a2|address[7]                     ; Lost Fanouts                   ; insReg:a2|temp[7], instmem:a1|outIM[7]                                                  ;
+; insReg:a2|address[8]                     ; Lost Fanouts                   ; insReg:a2|temp[8], instmem:a1|outIM[8]                                                  ;
+; insReg:a2|address[9]                     ; Lost Fanouts                   ; insReg:a2|temp[9], instmem:a1|outIM[9]                                                  ;
+; insReg:a2|address[10]                    ; Lost Fanouts                   ; insReg:a2|temp[10], instmem:a1|outIM[10]                                                ;
+; insReg:a2|address[11]                    ; Lost Fanouts                   ; insReg:a2|temp[11], instmem:a1|outIM[11]                                                ;
+; datamem:a9|outDM[5]                      ; Stuck at GND                   ; register_bank:reg_bank|read_dataB[18]                                                   ;
+;                                          ; due to stuck port data_in      ;                                                                                         ;
+; PC:a4|execadd[0]                         ; Lost Fanouts                   ; PC:a4|temp[0]                                                                           ;
+; controller:a3|state.execute              ; Lost Fanouts                   ; controller:a3|state.load                                                                ;
++------------------------------------------+--------------------------------+-----------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controller:a3 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; reset          ; 000   ; Unsigned Binary                   ;
+; load           ; 010   ; Unsigned Binary                   ;
+; execute        ; 100   ; Unsigned Binary                   ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CPU:C1|ALU:b2|logic:l1"                                                                                                                                                   ;
+; Port Connectivity Checks: "ALU:b2|logic:l1"                                                                                                                                                          ;
 +-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port  ; Type   ; Severity ; Details                                                                                                                                                                  ;
 +-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -193,7 +1471,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CPU:C1|ALU:b2|arith:a1"                                                                                                                                                   ;
+; Port Connectivity Checks: "ALU:b2|arith:a1"                                                                                                                                                          ;
 +-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port  ; Type   ; Severity ; Details                                                                                                                                                                  ;
 +-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -202,7 +1480,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CPU:C1|ALU:b2"                                                                                                                  ;
+; Port Connectivity Checks: "ALU:b2"                                                                                                                         ;
 +--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
 ; Port   ; Type   ; Severity ; Details                                                                                                                       ;
 +--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
@@ -211,7 +1489,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CPU:C1|muxA:b1"                                                                                                                                ;
+; Port Connectivity Checks: "muxA:b1"                                                                                                                                       ;
 +------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port ; Type  ; Severity ; Details                                                                                                                                         ;
 +------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -220,7 +1498,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CPU:C1|datamem:a9"                                                                                                                                         ;
+; Port Connectivity Checks: "datamem:a9"                                                                                                                                                ;
 +---------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port          ; Type   ; Severity ; Details                                                                                                                                           ;
 +---------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -231,7 +1509,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CPU:C1|register_bank:reg_bank"                                                                                                                                                            ;
+; Port Connectivity Checks: "register_bank:reg_bank"                                                                                                                                                                   ;
 +---------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port          ; Type  ; Severity ; Details                                                                                                                                                                           ;
 +---------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -241,7 +1519,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CPU:C1|muxB:a5"                                                                                                                                 ;
+; Port Connectivity Checks: "muxB:a5"                                                                                                                                        ;
 +------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                                                                                         ;
 +------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -252,7 +1530,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CPU:C1|PC:a4"                                                                                                                   ;
+; Port Connectivity Checks: "PC:a4"                                                                                                                          ;
 +---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------+
 ; Port    ; Type   ; Severity ; Details                                                                                                                      ;
 +---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------+
@@ -261,7 +1539,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CPU:C1|insReg:a2"                                                                                                                                                                   ;
+; Port Connectivity Checks: "insReg:a2"                                                                                                                                                                          ;
 +-------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port  ; Type  ; Severity ; Details                                                                                                                                                                             ;
 +-------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -270,7 +1548,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CPU:C1|instmem:a1"                                                                                                                                                                    ;
+; Port Connectivity Checks: "instmem:a1"                                                                                                                                                                           ;
 +--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port   ; Type   ; Severity ; Details                                                                                                                                                                             ;
 +--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -279,27 +1557,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CPU:C1"                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; za   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; zb   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; eq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; gt   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; lt   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 52                          ;
+; cycloneiii_lcell_comb ; 2                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 2                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Jun 12 18:22:03 2024
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU_FINAL_V2 -c CPU_FINAL_V2 --analysis_and_elaboration
+    Info: Processing started: Thu Jun 13 01:28:06 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU_FINAL_V2 -c CPU_FINAL_V2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file alu.v
@@ -331,15 +1620,30 @@ Info (12021): Found 1 design units, including 1 entities, in source file muxa.v
     Info (12023): Found entity 1: muxA File: C:/Users/artur/Downloads/CPU_FINAL_V2/muxA.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file tb_cpu.v
     Info (12023): Found entity 1: tb_CPU File: C:/Users/artur/Downloads/CPU_FINAL_V2/tb_CPU.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file arith_tb.v
+    Info (12023): Found entity 1: arith_tb File: C:/Users/artur/Downloads/CPU_FINAL_V2/arith_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file tb_logic.v
+    Info (12023): Found entity 1: tb_logic File: C:/Users/artur/Downloads/CPU_FINAL_V2/tb_logic.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file tb_alu.v
+    Info (12023): Found entity 1: tb_ALU File: C:/Users/artur/Downloads/CPU_FINAL_V2/tb_ALU.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file tb_pc.v
+    Info (12023): Found entity 1: tb_PC File: C:/Users/artur/Downloads/CPU_FINAL_V2/tb_PC.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file tb_insreg.v
+    Info (12023): Found entity 1: tb_insReg File: C:/Users/artur/Downloads/CPU_FINAL_V2/tb_insReg.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file tb_instmem.v
+    Info (12023): Found entity 1: tb_instmem File: C:/Users/artur/Downloads/CPU_FINAL_V2/tb_instmem.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file tb_controller.v
+    Info (12023): Found entity 1: tb_controller File: C:/Users/artur/Downloads/CPU_FINAL_V2/tb_controller.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file tb_datamem.v
+    Info (12023): Found entity 1: tb_datamem File: C:/Users/artur/Downloads/CPU_FINAL_V2/tb_datamem.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file tb_register_bank.v
+    Info (12023): Found entity 1: tb_register_bank File: C:/Users/artur/Downloads/CPU_FINAL_V2/tb_register_bank.v Line: 3
 Warning (10236): Verilog HDL Implicit Net warning at CPU.v(64): created implicit net for "execaddd" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 64
 Warning (10236): Verilog HDL Implicit Net warning at CPU.v(86): created implicit net for "dataCoutd" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 86
-Info (12127): Elaborating entity "tb_CPU" for the top level hierarchy
-Warning (10755): Verilog HDL warning at tb_CPU.v(39): assignments to clk create a combinational loop File: C:/Users/artur/Downloads/CPU_FINAL_V2/tb_CPU.v Line: 39
-Warning (10175): Verilog HDL warning at tb_CPU.v(68): ignoring unsupported system task File: C:/Users/artur/Downloads/CPU_FINAL_V2/tb_CPU.v Line: 68
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:C1" File: C:/Users/artur/Downloads/CPU_FINAL_V2/tb_CPU.v Line: 27
-Info (12128): Elaborating entity "instmem" for hierarchy "CPU:C1|instmem:a1" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 30
-Info (12128): Elaborating entity "insReg" for hierarchy "CPU:C1|insReg:a2" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 38
-Info (12128): Elaborating entity "controller" for hierarchy "CPU:C1|controller:a3" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 61
+Info (12127): Elaborating entity "CPU" for the top level hierarchy
+Info (12128): Elaborating entity "instmem" for hierarchy "instmem:a1" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 30
+Info (12128): Elaborating entity "insReg" for hierarchy "insReg:a2" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 38
+Info (12128): Elaborating entity "controller" for hierarchy "controller:a3" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 61
 Warning (10199): Verilog HDL Case Statement warning at controller.v(153): case item expression never matches the case expression File: C:/Users/artur/Downloads/CPU_FINAL_V2/controller.v Line: 153
 Warning (10199): Verilog HDL Case Statement warning at controller.v(167): case item expression never matches the case expression File: C:/Users/artur/Downloads/CPU_FINAL_V2/controller.v Line: 167
 Warning (10199): Verilog HDL Case Statement warning at controller.v(181): case item expression never matches the case expression File: C:/Users/artur/Downloads/CPU_FINAL_V2/controller.v Line: 181
@@ -356,13 +1660,13 @@ Warning (10240): Verilog HDL Always Construct warning at controller.v(48): infer
 Warning (10240): Verilog HDL Always Construct warning at controller.v(48): inferring latch(es) for variable "incPC", which holds its previous value in one or more paths through the always construct File: C:/Users/artur/Downloads/CPU_FINAL_V2/controller.v Line: 48
 Info (10041): Inferred latch for "incPC" at controller.v(64) File: C:/Users/artur/Downloads/CPU_FINAL_V2/controller.v Line: 64
 Info (10041): Inferred latch for "loadPC" at controller.v(64) File: C:/Users/artur/Downloads/CPU_FINAL_V2/controller.v Line: 64
-Info (12128): Elaborating entity "PC" for hierarchy "CPU:C1|PC:a4" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 64
-Info (12128): Elaborating entity "muxB" for hierarchy "CPU:C1|muxB:a5" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 67
-Info (12128): Elaborating entity "register_bank" for hierarchy "CPU:C1|register_bank:reg_bank" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 81
-Info (12128): Elaborating entity "datamem" for hierarchy "CPU:C1|datamem:a9" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 89
-Info (12128): Elaborating entity "muxA" for hierarchy "CPU:C1|muxA:b1" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 100
+Info (12128): Elaborating entity "PC" for hierarchy "PC:a4" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 64
+Info (12128): Elaborating entity "muxB" for hierarchy "muxB:a5" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 67
+Info (12128): Elaborating entity "register_bank" for hierarchy "register_bank:reg_bank" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 81
+Info (12128): Elaborating entity "datamem" for hierarchy "datamem:a9" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 89
+Info (12128): Elaborating entity "muxA" for hierarchy "muxA:b1" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 100
 Warning (10230): Verilog HDL assignment warning at muxA.v(14): truncated value with size 48 to match size of target (32) File: C:/Users/artur/Downloads/CPU_FINAL_V2/muxA.v Line: 14
-Info (12128): Elaborating entity "ALU" for hierarchy "CPU:C1|ALU:b2" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 103
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:b2" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 103
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(25): variable "outau" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/artur/Downloads/CPU_FINAL_V2/ALU.v Line: 25
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(27): variable "outlu" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/artur/Downloads/CPU_FINAL_V2/ALU.v Line: 27
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(32): variable "tza" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/artur/Downloads/CPU_FINAL_V2/ALU.v Line: 32
@@ -370,39 +1674,97 @@ Warning (10235): Verilog HDL Always Construct warning at ALU.v(33): variable "tz
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(34): variable "teq" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/artur/Downloads/CPU_FINAL_V2/ALU.v Line: 34
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(35): variable "tgt" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/artur/Downloads/CPU_FINAL_V2/ALU.v Line: 35
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(36): variable "tlt" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/artur/Downloads/CPU_FINAL_V2/ALU.v Line: 36
-Info (12128): Elaborating entity "arith" for hierarchy "CPU:C1|ALU:b2|arith:a1" File: C:/Users/artur/Downloads/CPU_FINAL_V2/ALU.v Line: 19
-Info (12128): Elaborating entity "logic" for hierarchy "CPU:C1|ALU:b2|logic:l1" File: C:/Users/artur/Downloads/CPU_FINAL_V2/ALU.v Line: 20
+Info (12128): Elaborating entity "arith" for hierarchy "ALU:b2|arith:a1" File: C:/Users/artur/Downloads/CPU_FINAL_V2/ALU.v Line: 19
+Info (12128): Elaborating entity "logic" for hierarchy "ALU:b2|logic:l1" File: C:/Users/artur/Downloads/CPU_FINAL_V2/ALU.v Line: 20
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "CPU:C1|outIMd[31]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
-    Warning (12110): Net "CPU:C1|outIMd[30]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
-    Warning (12110): Net "CPU:C1|outIMd[29]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
-    Warning (12110): Net "CPU:C1|outIMd[28]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
-    Warning (12110): Net "CPU:C1|outIMd[27]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
-    Warning (12110): Net "CPU:C1|outIMd[26]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
-    Warning (12110): Net "CPU:C1|outIMd[25]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
-    Warning (12110): Net "CPU:C1|outIMd[24]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
-    Warning (12110): Net "CPU:C1|outIMd[23]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
-    Warning (12110): Net "CPU:C1|outIMd[22]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
-    Warning (12110): Net "CPU:C1|outIMd[21]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
-    Warning (12110): Net "CPU:C1|outIMd[20]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
-    Warning (12110): Net "CPU:C1|outIMd[19]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
-    Warning (12110): Net "CPU:C1|outIMd[18]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
-    Warning (12110): Net "CPU:C1|outIMd[17]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
-    Warning (12110): Net "CPU:C1|outIMd[16]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "clk" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/tb_CPU.v Line: 4
+    Warning (12110): Net "outIMd[31]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
+    Warning (12110): Net "outIMd[30]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
+    Warning (12110): Net "outIMd[29]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
+    Warning (12110): Net "outIMd[28]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
+    Warning (12110): Net "outIMd[27]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
+    Warning (12110): Net "outIMd[26]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
+    Warning (12110): Net "outIMd[25]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
+    Warning (12110): Net "outIMd[24]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
+    Warning (12110): Net "outIMd[23]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
+    Warning (12110): Net "outIMd[22]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
+    Warning (12110): Net "outIMd[21]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
+    Warning (12110): Net "outIMd[20]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
+    Warning (12110): Net "outIMd[19]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
+    Warning (12110): Net "outIMd[18]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
+    Warning (12110): Net "outIMd[17]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
+    Warning (12110): Net "outIMd[16]" is missing source, defaulting to GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 18
 Warning (12241): 10 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "za" is stuck at VCC File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 7
+    Warning (13410): Pin "zb" is stuck at VCC File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 8
+    Warning (13410): Pin "eq" is stuck at VCC File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 9
+    Warning (13410): Pin "gt" is stuck at GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 10
+    Warning (13410): Pin "lt" is stuck at GND File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 12
+Info (17049): 165 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/artur/Downloads/CPU_FINAL_V2/output_files/CPU_FINAL_V2.map.smsg
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 48 warnings
-    Info: Peak virtual memory: 4714 megabytes
-    Info: Processing ended: Wed Jun 12 18:22:15 2024
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:15
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 47 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "we_IM" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 4
+    Warning (15610): No output dependent on input pin "codein[0]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[1]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[2]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[3]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[4]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[5]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[6]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[7]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[8]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[9]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[10]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[11]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[12]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[13]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[14]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[15]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[16]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[17]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[18]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[19]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[20]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[21]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[22]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[23]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[24]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[25]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[26]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[27]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[28]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[29]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[30]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "codein[31]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 5
+    Warning (15610): No output dependent on input pin "immd[0]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 6
+    Warning (15610): No output dependent on input pin "immd[1]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 6
+    Warning (15610): No output dependent on input pin "immd[2]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 6
+    Warning (15610): No output dependent on input pin "immd[3]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 6
+    Warning (15610): No output dependent on input pin "immd[4]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 6
+    Warning (15610): No output dependent on input pin "immd[5]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 6
+    Warning (15610): No output dependent on input pin "immd[6]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 6
+    Warning (15610): No output dependent on input pin "immd[7]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 6
+    Warning (15610): No output dependent on input pin "immd[8]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 6
+    Warning (15610): No output dependent on input pin "immd[9]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 6
+    Warning (15610): No output dependent on input pin "immd[10]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 6
+    Warning (15610): No output dependent on input pin "immd[11]" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 6
+    Warning (15610): No output dependent on input pin "en" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 3
+    Warning (15610): No output dependent on input pin "clk" File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 2
+Info (21057): Implemented 52 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 47 input pins
+    Info (21059): Implemented 5 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 98 warnings
+    Info: Peak virtual memory: 4738 megabytes
+    Info: Processing ended: Thu Jun 13 01:28:16 2024
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:08
 
 
-+--------------------------------------------+
-; Analysis & Elaboration Suppressed Messages ;
-+--------------------------------------------+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
 The suppressed messages can be found in C:/Users/artur/Downloads/CPU_FINAL_V2/output_files/CPU_FINAL_V2.map.smsg.
 
 

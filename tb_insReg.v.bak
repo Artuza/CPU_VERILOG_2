@@ -1,0 +1,39 @@
+`timescale 1ns / 1ps
+
+module tb_insReg();
+
+    // Inputs
+    reg [31:0] inst_in;
+    reg clk;
+
+    // Outputs
+    wire [31:0] inst_out;
+
+    // Instantiate the insReg module
+    insReg dut (
+        .inst_in(inst_in),
+        .clk(clk),
+        .inst_out(inst_out)
+    );
+
+    // Clock generation
+    always begin
+        clk = 0;
+        #5;  // Adjust the period as needed
+        clk = 1;
+        #5;  // Adjust the period as needed
+    end
+
+    // Test case: Load instruction into insReg
+    initial begin
+        inst_in = 32'h01234567;  // Example instruction to load
+        $display("Loading instruction: %h", inst_in);
+        #10;  // Wait for some time
+        inst_in = 32'h89ABCDEF;  // Another example instruction to load
+        $display("Loading instruction: %h", inst_in);
+        #10;  // Wait for some time
+        $display("Output instruction: %h", inst_out);
+        $finish;
+    end
+
+endmodule

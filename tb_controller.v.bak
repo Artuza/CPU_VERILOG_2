@@ -1,0 +1,51 @@
+`timescale 1ns / 1ps
+
+module tb_controller;
+
+    // Definición de los puertos del testbench
+    reg clk;
+    reg reset;
+    reg [3:0] opcode;
+    // Define other control signals as needed for your controller
+
+    // Instanciación del módulo controller bajo prueba
+    controller dut (
+        .clk(clk),
+        .reset(reset),
+        .opcode(opcode)
+        // Connect other control signals here
+        // .control_signal_name(control_signal_name)
+    );
+
+    // Parámetros de simulación
+    initial begin
+        // Inicialización de señales
+        clk = 0;
+        reset = 1;
+        opcode = 4'b0000;
+        // Initialize other control signals as needed
+
+        // Esperar un ciclo de clock para estabilización
+        #5;
+
+        // Desactivar la señal de reset después de unos ciclos de clock
+        reset = 0;
+
+        // Ejemplo de secuencia de operaciones controladas por opcode
+        // Aquí puedes cambiar el valor de opcode y verificar las salidas de control
+
+        // Caso 1: Opcode 0000
+        opcode = 4'b0000;
+        // Verificar las salidas de control esperadas
+        #10;
+
+        // Caso 2: Otro opcode
+        opcode = 4'b0010;
+        // Verificar las salidas de control esperadas
+        #10;
+
+        // Finalizar simulación
+        $finish;
+    end
+
+endmodule

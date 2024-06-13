@@ -1,5 +1,5 @@
 Flow report for CPU_FINAL_V2
-Wed Jun 12 18:22:15 2024
+Thu Jun 13 01:28:35 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,24 +41,24 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Jun 12 18:22:15 2024       ;
+; Flow Status                        ; Successful - Thu Jun 13 01:28:35 2024       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; CPU_FINAL_V2                                ;
-; Top-level Entity Name              ; tb_CPU                                      ;
+; Top-level Entity Name              ; CPU                                         ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M08DAF484C8G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 1 / 8,064 ( < 1 % )                         ;
+;     Total combinational functions  ; 1 / 8,064 ( < 1 % )                         ;
+;     Dedicated logic registers      ; 0 / 8,064 ( 0 % )                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 52 / 250 ( 21 % )                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0 / 387,072 ( 0 % )                         ;
+; Embedded Multiplier 9-bit elements ; 0 / 48 ( 0 % )                              ;
+; Total PLLs                         ; 0 / 2 ( 0 % )                               ;
+; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
+; ADC blocks                         ; 0 / 1 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -67,62 +67,110 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/12/2024 18:22:04 ;
+; Start date & time ; 06/13/2024 01:28:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; CPU_FINAL_V2        ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                             ;
-+--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
-+--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 52934020429607.171823812426188         ; --            ; --          ; --             ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_CPU         ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_CPU                                 ; --            ; --          ; eda_simulation ;
-; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation ;
-; EDA_TEST_BENCH_FILE                  ; tb_CPU.v                               ; --            ; --          ; tb_CPU         ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_CPU                                 ; --            ; --          ; tb_CPU         ;
-; EDA_TEST_BENCH_NAME                  ; tb_CPU                                 ; --            ; --          ; eda_simulation ;
-; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --             ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; tb_CPU      ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; tb_CPU      ; Top            ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; tb_CPU      ; Top            ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                     ; tb_CPU                                 ; CPU_FINAL_V2  ; --          ; --             ;
-+--------------------------------------+----------------------------------------+---------------+-------------+----------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                               ;
++--------------------------------------+----------------------------------------+---------------+-------------+------------------+
+; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id       ;
++--------------------------------------+----------------------------------------+---------------+-------------+------------------+
+; COMPILER_SIGNATURE_ID                ; 52934020429607.171826368618968         ; --            ; --          ; --               ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_PC            ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_CPU           ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_datamem       ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_ALU           ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; arith_tb         ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_insReg        ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_logic         ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_controller    ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_instmem       ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_register_bank ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_register_bank                       ; --            ; --          ; eda_simulation   ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation   ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --               ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation   ;
+; EDA_TEST_BENCH_FILE                  ; tb_PC.v                                ; --            ; --          ; tb_PC            ;
+; EDA_TEST_BENCH_FILE                  ; tb_CPU.v                               ; --            ; --          ; tb_CPU           ;
+; EDA_TEST_BENCH_FILE                  ; tb_datamem.v                           ; --            ; --          ; tb_datamem       ;
+; EDA_TEST_BENCH_FILE                  ; tb_ALU.v                               ; --            ; --          ; tb_ALU           ;
+; EDA_TEST_BENCH_FILE                  ; arith_tb.v                             ; --            ; --          ; arith_tb         ;
+; EDA_TEST_BENCH_FILE                  ; tb_insReg.v                            ; --            ; --          ; tb_insReg        ;
+; EDA_TEST_BENCH_FILE                  ; tb_logic.v                             ; --            ; --          ; tb_logic         ;
+; EDA_TEST_BENCH_FILE                  ; tb_controller.v                        ; --            ; --          ; tb_controller    ;
+; EDA_TEST_BENCH_FILE                  ; tb_instmem.v                           ; --            ; --          ; tb_instmem       ;
+; EDA_TEST_BENCH_FILE                  ; tb_register_bank.v                     ; --            ; --          ; tb_register_bank ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_PC                                  ; --            ; --          ; tb_PC            ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_CPU                                 ; --            ; --          ; tb_CPU           ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_datamem                             ; --            ; --          ; tb_datamem       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_ALU                                 ; --            ; --          ; tb_ALU           ;
+; EDA_TEST_BENCH_MODULE_NAME           ; arith_tb                               ; --            ; --          ; arith_tb         ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_insReg                              ; --            ; --          ; tb_insReg        ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_logic                               ; --            ; --          ; tb_logic         ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_controller                          ; --            ; --          ; tb_controller    ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_instmem                             ; --            ; --          ; tb_instmem       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_register_bank                       ; --            ; --          ; tb_register_bank ;
+; EDA_TEST_BENCH_NAME                  ; tb_CPU                                 ; --            ; --          ; eda_simulation   ;
+; EDA_TEST_BENCH_NAME                  ; arith_tb                               ; --            ; --          ; eda_simulation   ;
+; EDA_TEST_BENCH_NAME                  ; tb_logic                               ; --            ; --          ; eda_simulation   ;
+; EDA_TEST_BENCH_NAME                  ; tb_ALU                                 ; --            ; --          ; eda_simulation   ;
+; EDA_TEST_BENCH_NAME                  ; tb_PC                                  ; --            ; --          ; eda_simulation   ;
+; EDA_TEST_BENCH_NAME                  ; tb_insReg                              ; --            ; --          ; eda_simulation   ;
+; EDA_TEST_BENCH_NAME                  ; tb_instmem                             ; --            ; --          ; eda_simulation   ;
+; EDA_TEST_BENCH_NAME                  ; tb_controller                          ; --            ; --          ; eda_simulation   ;
+; EDA_TEST_BENCH_NAME                  ; tb_datamem                             ; --            ; --          ; eda_simulation   ;
+; EDA_TEST_BENCH_NAME                  ; tb_register_bank                       ; --            ; --          ; eda_simulation   ;
+; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation   ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --               ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --               ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; CPU         ; Top              ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; CPU         ; Top              ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; CPU         ; Top              ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --               ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --               ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --          ; --               ;
+; TOP_LEVEL_ENTITY                     ; CPU                                    ; CPU_FINAL_V2  ; --          ; --               ;
++--------------------------------------+----------------------------------------+---------------+-------------+------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                          ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:12     ; 1.0                     ; 4714 MB             ; 00:00:15                           ;
-; Total                  ; 00:00:12     ; --                      ; --                  ; 00:00:15                           ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4723 MB             ; 00:00:08                           ;
+; Fitter               ; 00:00:08     ; 1.1                     ; 6109 MB             ; 00:00:02                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4685 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4872 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4641 MB             ; 00:00:00                           ;
+; Total                ; 00:00:20     ; --                      ; --                  ; 00:00:12                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                      ;
-+------------------------+------------------+------------+------------+----------------+
-; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+------------------------+------------------+------------+------------+----------------+
-; Analysis & Elaboration ; Laptop-Arturo    ; Windows 10 ; 10.0       ; x86_64         ;
-+------------------------+------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; Laptop-Arturo    ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; Laptop-Arturo    ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; Laptop-Arturo    ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; Laptop-Arturo    ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; Laptop-Arturo    ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off CPU_FINAL_V2 -c CPU_FINAL_V2 --analysis_and_elaboration
+quartus_map --read_settings_files=on --write_settings_files=off CPU_FINAL_V2 -c CPU_FINAL_V2
+quartus_fit --read_settings_files=off --write_settings_files=off CPU_FINAL_V2 -c CPU_FINAL_V2
+quartus_asm --read_settings_files=off --write_settings_files=off CPU_FINAL_V2 -c CPU_FINAL_V2
+quartus_sta CPU_FINAL_V2 -c CPU_FINAL_V2
+quartus_eda --read_settings_files=off --write_settings_files=off CPU_FINAL_V2 -c CPU_FINAL_V2
 
 
 

@@ -1,0 +1,44 @@
+`timescale 1ns/1ns
+
+module tb_logic;
+
+    reg [31:0] a;
+    reg [31:0] b;
+    reg [2:0] opcode;
+    wire [31:0] out;
+
+    // Instancia del módulo logic
+    logic uut (
+        .a(a),
+        .b(b),
+        .opcode(opcode),
+        .out(out)
+    );
+
+    initial begin
+        // Inicialización de señales
+        a = 0;
+        b = 0;
+        opcode = 0;
+        
+        // Estímulos de prueba
+        // Prueba de AND
+        a = 32'hFFFFFFFF; b = 32'h0F0F0F0F; opcode = 3'b000;
+        #10;
+        
+        // Prueba de OR
+        a = 32'hF0F0F0F0; b = 32'h0F0F0F0F; opcode = 3'b001;
+        #10;
+
+        // Prueba de XOR
+        a = 32'hFF00FF00; b = 32'h00FF00FF; opcode = 3'b010;
+        #10;
+        
+        // Prueba de NOT
+        a = 32'hAAAAAAAA; b = 32'h00000000; opcode = 3'b011;
+        #10;
+
+        // Finalización de la simulación
+        $finish;
+    end
+endmodule

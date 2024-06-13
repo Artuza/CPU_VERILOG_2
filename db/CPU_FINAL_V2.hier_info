@@ -1,7 +1,4 @@
-|tb_CPU
-
-
-|tb_CPU|CPU:C1
+|CPU
 clk => clk.IN8
 en => en.IN1
 we_IM => we_IM.IN1
@@ -49,14 +46,14 @@ immd[8] => immd[8].IN1
 immd[9] => immd[9].IN1
 immd[10] => immd[10].IN1
 immd[11] => immd[11].IN1
-za <= zad.DB_MAX_OUTPUT_PORT_TYPE
-zb <= zbd.DB_MAX_OUTPUT_PORT_TYPE
-eq <= eqd.DB_MAX_OUTPUT_PORT_TYPE
-gt <= gtd.DB_MAX_OUTPUT_PORT_TYPE
-lt <= ltd.DB_MAX_OUTPUT_PORT_TYPE
+za << zad.DB_MAX_OUTPUT_PORT_TYPE
+zb << zbd.DB_MAX_OUTPUT_PORT_TYPE
+eq << eqd.DB_MAX_OUTPUT_PORT_TYPE
+gt << gtd.DB_MAX_OUTPUT_PORT_TYPE
+lt << ltd.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|tb_CPU|CPU:C1|instmem:a1
+|CPU|instmem:a1
 clk => mem.we_a.CLK
 clk => mem.waddr_a[3].CLK
 clk => mem.waddr_a[2].CLK
@@ -183,7 +180,7 @@ outIM[14] <= outIM[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 outIM[15] <= outIM[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|tb_CPU|CPU:C1|insReg:a2
+|CPU|insReg:a2
 clk => opcode[0]~reg0.CLK
 clk => opcode[1]~reg0.CLK
 clk => opcode[2]~reg0.CLK
@@ -266,7 +263,7 @@ opcode[2] <= opcode[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 opcode[3] <= opcode[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|tb_CPU|CPU:C1|controller:a3
+|CPU|controller:a3
 clk => state~4.DATAIN
 en => state.OUTPUTSELECT
 en => state.OUTPUTSELECT
@@ -302,7 +299,7 @@ selA <= <GND>
 selB <= <GND>
 
 
-|tb_CPU|CPU:C1|PC:a4
+|CPU|PC:a4
 clk => execadd[0]~reg0.CLK
 clk => execadd[1]~reg0.CLK
 clk => execadd[2]~reg0.CLK
@@ -359,7 +356,7 @@ execadd[10] <= execadd[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 execadd[11] <= execadd[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|tb_CPU|CPU:C1|muxB:a5
+|CPU|muxB:a5
 clk => outB[0]~reg0.CLK
 clk => outB[1]~reg0.CLK
 clk => outB[2]~reg0.CLK
@@ -522,7 +519,7 @@ outB[30] <= outB[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 outB[31] <= outB[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|tb_CPU|CPU:C1|register_bank:reg_bank
+|CPU|register_bank:reg_bank
 clk => read_dataB[0]~reg0.CLK
 clk => read_dataB[1]~reg0.CLK
 clk => read_dataB[2]~reg0.CLK
@@ -4242,7 +4239,7 @@ read_dataB[30] <= read_dataB[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 read_dataB[31] <= read_dataB[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|tb_CPU|CPU:C1|datamem:a9
+|CPU|datamem:a9
 clk => mem.we_a.CLK
 clk => mem.waddr_a[4].CLK
 clk => mem.waddr_a[3].CLK
@@ -4488,7 +4485,7 @@ outDM[30] <= outDM[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 outDM[31] <= outDM[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|tb_CPU|CPU:C1|muxA:b1
+|CPU|muxA:b1
 clk => outA[0]~reg0.CLK
 clk => outA[1]~reg0.CLK
 clk => outA[2]~reg0.CLK
@@ -4651,7 +4648,7 @@ outA[30] <= outA[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 outA[31] <= outA[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|tb_CPU|CPU:C1|ALU:b2
+|CPU|ALU:b2
 a[0] => a[0].IN2
 a[1] => a[1].IN2
 a[2] => a[2].IN2
@@ -4918,7 +4915,7 @@ gt <= logic:l1.gt
 lt <= logic:l1.lt
 
 
-|tb_CPU|CPU:C1|ALU:b2|arith:a1
+|CPU|ALU:b2|arith:a1
 a[0] => Add0.IN32
 a[0] => Mult0.IN31
 a[0] => Add1.IN64
@@ -5529,7 +5526,7 @@ outau[30] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 outau[31] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|tb_CPU|CPU:C1|ALU:b2|logic:l1
+|CPU|ALU:b2|logic:l1
 a[0] => outlu.IN0
 a[0] => outlu.IN0
 a[0] => outlu.IN0
