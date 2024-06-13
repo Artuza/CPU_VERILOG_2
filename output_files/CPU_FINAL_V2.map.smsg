@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at instmem.v(12): always construct contains both blocking and non-blocking assignments File: C:/Users/artur/Downloads/CPU_FINAL_V2/instmem.v Line: 12

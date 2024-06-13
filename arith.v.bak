@@ -1,0 +1,17 @@
+module arith(
+    input [31:0] a,
+    input [31:0] b,
+    input [2:3] opcode,
+    output reg [63:0] outau
+);
+
+    always @(a, b, opcode) begin
+        case(opcode)
+            3'b000: outau = {32'h00000000, a + b};
+            3'b001: outau = a * b;
+            3'b010: outau = (a > b) ? a - b : b - a;
+            3'b011: outau = (a > b) ? a / b : b / a;
+            default: outau = 64'h0000000000000000;
+        endcase
+    end
+endmodule

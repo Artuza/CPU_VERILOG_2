@@ -1,0 +1,54 @@
+module CPU(
+    input clk,
+    input en,
+    input we_IM,
+    input [31:0] codein,
+    input [11:0] immd,
+    output za,
+    output zb,
+    output eq,
+    output gt,
+    output lt
+);
+    // Conexiones internas
+    wire [11:0] curradd;
+    wire [31:0] outIMd;
+    wire [11:0] addressd;
+    wire [3:0] opcodeD;
+    wire loadIRd, incPCd, loadPCd, loadAd, loadBd, selAd, selBd, loadCd, we_DMd, moded;
+    wire [31:0] outIRd;
+    wire [31:0] outAd, outBd;
+    wire [63:0] outALUd;
+    
+    // Instanciación de módulos
+    controller c1(
+        .clk(clk), 
+        .en(en), 
+        .opcode(opcodeD), 
+        .loadA(loadAd), 
+        .loadB(loadBd), 
+        .loadC(loadCd), 
+        .loadIR(loadIRd), 
+        .loadPC(loadPCd), 
+        .incPC(incPCd), 
+        .mode(moded), 
+        .we_DM(we_DMd), 
+        .selA(selAd), 
+        .selB(selBd)
+    );
+
+    alu a1(
+        .a(outAd), 
+        .b(outBd), 
+        .opcode(opcodeD[2:0]), 
+        .mode(moded), 
+        .outALU(outALUd), 
+        .za(za), 
+        .zb(zb), 
+        .eq(eq), 
+        .gt(gt), 
+        .lt(lt)
+    );
+
+    // Incluir instancias de otros módulos según sea necesario
+endmodule

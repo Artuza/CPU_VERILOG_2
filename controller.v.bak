@@ -1,0 +1,114 @@
+module controller (
+    input clk,
+    input en,
+    input [3:0] opcode,
+    output reg loadA,
+    output reg loadB,
+    output reg loadC,
+    output reg loadIR,
+    output reg loadPC,
+    output reg incPC,
+    output reg mode,
+    output reg we_DM,
+    output reg selA,
+    output reg selB
+);
+
+    reg [2:0] state;
+    reg [2:0] next_state;
+
+    parameter reset = 3'b000, load = 3'b010, execute = 3'b100;
+
+    always @(posedge clk) begin
+        if (en == 0) begin
+            state = reset;
+        end else if (en == 1) begin
+            state = next_state;
+        end
+    end
+
+    always @(*) begin
+        if (en == 0) begin
+            loadA = 0;
+            loadB = 0;
+            loadC = 0;
+            loadIR = 0;
+            loadPC = 0;
+            incPC = 0;
+            mode = 1'bZ;
+            we_DM = 0;
+            selA = 1'b0;
+            selB = 1'b0;
+            next_state = reset;
+        end else begin
+            case(state)
+                reset: begin
+                    loadA = 0;
+                    loadB = 0;
+                    loadC = 0;
+                    loadIR = 0;
+                    loadPC = 0;
+                    incPC = 0;
+                    mode = 1'bZ;
+                    we_DM = 0;
+                    selA = 1'b0;
+                    selB = 1'b0;
+                    next_state = load;
+                end
+                load: begin
+                    loadA = 0;
+                    loadB = 0;
+                    loadC = 0;
+                    loadIR = 1;
+                    loadPC = 1;
+                    incPC = 0;
+                    mode = 1'bZ;
+                    we_DM = 0;
+                    selA = 1'b0;
+                    selB = 1'b0;
+                    next_state = execute;
+                end
+                execute: begin
+                    case(opcode)
+                        4'b0000: begin
+                            loadA = 0;
+                            loadB = 0;
+                            loadC = 0;
+                            loadIR = 0;
+                            loadPC = 0;
+                            incPC = 1;
+                            mode = 1'b0;
+                            we_DM = 1;
+                            #5 we_DM = 0;
+                            selA = 1'b0;
+                            selB = 1'b0;
+                        end
+                        // ... (otros casos para diferentes opcodes)
+                        default: begin
+                            loadA = 0;
+                            loadB = 0;
+                            loadC = 0;
+                            loadIR = 1;
+                            mode = 1'bZ;
+                            we_DM = 0;
+                            selA = 1'b0;
+                            selB = 1'b0;
+                        end
+                    endcase
+                    next_state = load;
+                end
+                default: begin
+                    loadA = 0;
+                    loadB = 0;
+                    loadC = 0;
+                    loadIR = 1;
+                    mode = 1'bZ;
+                    we_DM = 0;
+                    selA = 1'b0;
+                    selB = 1'b0;
+                    next_state = reset;
+                end
+            endcase
+        end
+    end
+endmodule

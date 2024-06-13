@@ -1,0 +1,29 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/ALU.v}
+vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/arith.v}
+vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/logic.v}
+vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/controller.v}
+vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v}
+vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/register_bank.v}
+vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/instmem.v}
+vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/insReg.v}
+vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/PC.v}
+vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/muxB.v}
+vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/datamem.v}
+vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/muxA.v}
+vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/tb_CPU.v}
+
+vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/tb_CPU.v}
+
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  tb_CPU
+
+add wave *
+view structure
+view signals
+run -all

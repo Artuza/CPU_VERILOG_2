@@ -1,0 +1,15 @@
+module muxB(
+    input [31:0] B1,
+    input [31:0] B2,
+    input selB,
+    output reg [31:0] outB
+);
+
+    always @* begin
+        if (selB == 0)
+            outB = B1;
+        else
+            outB = B2;
+    end
+
+endmodule

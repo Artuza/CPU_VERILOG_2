@@ -1,0 +1,21 @@
+module register_bank(
+    input clk,
+    input write_enable,
+    input [11:0] write_address,
+    input [31:0] write_data,
+    output reg [31:0] read_addressA,
+    output reg [31:0] read_addressB
+);
+
+reg [31:0] registers [0:1023]; // 1024 registros de 32 bits
+
+always @(posedge clk) begin
+    if (write_enable) begin
+        registers[write_address] <= write_data;
+    end
+end
+
+assign read_addressA = registers[write_address];
+assign read_addressB = registers[write_data];
+
+endmodule

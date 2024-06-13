@@ -1,0 +1,52 @@
+`timescale 1ns / 1ps
+
+module tb_CPU;
+
+    // Parámetros
+    parameter DATA_WIDTH = 32;
+    parameter ADDR_WIDTH = 12;
+    parameter PROGRAM_SIZE = 16; // Tamaño del programa en palabras de memoria
+    
+    // Puertos del DUT
+    reg clk;
+    reg reset;
+    reg en;
+    wire [DATA_WIDTH-1:0] outDM;
+    
+    // Instancias
+    CPU dut (
+        .clk(clk),
+        .reset(reset),
+        .en(en),
+        .outDM(outDM)
+    );
+    
+    // Generación de la señal de reloj
+    always begin
+        #5 clk = ~clk;
+    end
+    
+    // Reset inicial
+    initial begin
+        clk = 0;
+        reset = 1;
+        en = 0;
+        #10 reset = 0;
+    end
+    
+    // Carga manual del programa en la memoria de instrucciones
+    reg [DATA_WIDTH-1:0] program [PROGRAM_SIZE-1:0];
+    integer i;
+    initial begin
+        program[0] = 32'b00000000000000000000000000001000; // Instrucción 1: Cargar 0 en A
+        program[1] = 32'b00000000000000000000000000001001; // Instrucción 2: Cargar 1 en B
+        program[2] = 32'b00000000000000000000000000001010; // Instrucción 3: Cargar 0 en C
+        program[3] = 32'b00000000000000000000000000000011; // Instrucción 4: Inicio del bucle (jmp a 3)
+        program[4] = 32'b00000000000000000000000000000000; // Instrucción 5: NOOP (nada)
+        program[5] = 32'b00000000000000000000000000001011; // Instrucción 6: Sumar A y B y guardar en C
+        program[6] = 32'b00000000000000000000000000000001; // Instrucción 7: NOOP (nada)
+        program[7] = 32'b00000000000000000000000000000010; // Instrucción 8: NOOP (nada)
+        program[8] = 32'b00000000000000000000000000000001; // Instrucción 9: NOOP (nada)
+        program[9] = 32'b00000000000000000000000000000001; // Instrucción 10: NOOP (nada)
+        program[10] = 32'b00000000000000000000000000000001; // Instrucción 11: NOOP (nada)
+        program[11] = 32'b000000000000000

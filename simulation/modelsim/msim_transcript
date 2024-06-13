@@ -1,0 +1,218 @@
+# Reading pref.tcl
+# ERROR: No extended dataflow license exists
+# do CPU_FINAL_V2_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying D:/Intel/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/ALU.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:22:36 on Jun 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/artur/Downloads/CPU_FINAL_V2" C:/Users/artur/Downloads/CPU_FINAL_V2/ALU.v 
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ALU
+# End time: 18:22:36 on Jun 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/arith.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:22:36 on Jun 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/artur/Downloads/CPU_FINAL_V2" C:/Users/artur/Downloads/CPU_FINAL_V2/arith.v 
+# -- Compiling module arith
+# 
+# Top level modules:
+# 	arith
+# End time: 18:22:36 on Jun 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/logic.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:22:36 on Jun 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/artur/Downloads/CPU_FINAL_V2" C:/Users/artur/Downloads/CPU_FINAL_V2/logic.v 
+# -- Compiling module logic
+# 
+# Top level modules:
+# 	logic
+# End time: 18:22:36 on Jun 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/controller.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:22:36 on Jun 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/artur/Downloads/CPU_FINAL_V2" C:/Users/artur/Downloads/CPU_FINAL_V2/controller.v 
+# -- Compiling module controller
+# 
+# Top level modules:
+# 	controller
+# End time: 18:22:37 on Jun 12,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:22:37 on Jun 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/artur/Downloads/CPU_FINAL_V2" C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v 
+# -- Compiling module CPU
+# 
+# Top level modules:
+# 	CPU
+# End time: 18:22:37 on Jun 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/register_bank.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:22:37 on Jun 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/artur/Downloads/CPU_FINAL_V2" C:/Users/artur/Downloads/CPU_FINAL_V2/register_bank.v 
+# -- Compiling module register_bank
+# 
+# Top level modules:
+# 	register_bank
+# End time: 18:22:37 on Jun 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/instmem.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:22:37 on Jun 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/artur/Downloads/CPU_FINAL_V2" C:/Users/artur/Downloads/CPU_FINAL_V2/instmem.v 
+# -- Compiling module instmem
+# 
+# Top level modules:
+# 	instmem
+# End time: 18:22:37 on Jun 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/insReg.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:22:37 on Jun 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/artur/Downloads/CPU_FINAL_V2" C:/Users/artur/Downloads/CPU_FINAL_V2/insReg.v 
+# -- Compiling module insReg
+# 
+# Top level modules:
+# 	insReg
+# End time: 18:22:37 on Jun 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/PC.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:22:37 on Jun 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/artur/Downloads/CPU_FINAL_V2" C:/Users/artur/Downloads/CPU_FINAL_V2/PC.v 
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# End time: 18:22:37 on Jun 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/muxB.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:22:37 on Jun 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/artur/Downloads/CPU_FINAL_V2" C:/Users/artur/Downloads/CPU_FINAL_V2/muxB.v 
+# -- Compiling module muxB
+# 
+# Top level modules:
+# 	muxB
+# End time: 18:22:37 on Jun 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/datamem.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:22:37 on Jun 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/artur/Downloads/CPU_FINAL_V2" C:/Users/artur/Downloads/CPU_FINAL_V2/datamem.v 
+# -- Compiling module datamem
+# 
+# Top level modules:
+# 	datamem
+# End time: 18:22:37 on Jun 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/muxA.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:22:37 on Jun 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/artur/Downloads/CPU_FINAL_V2" C:/Users/artur/Downloads/CPU_FINAL_V2/muxA.v 
+# -- Compiling module muxA
+# 
+# Top level modules:
+# 	muxA
+# End time: 18:22:37 on Jun 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/tb_CPU.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:22:37 on Jun 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/artur/Downloads/CPU_FINAL_V2" C:/Users/artur/Downloads/CPU_FINAL_V2/tb_CPU.v 
+# -- Compiling module tb_CPU
+# 
+# Top level modules:
+# 	tb_CPU
+# End time: 18:22:37 on Jun 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/artur/Downloads/CPU_FINAL_V2 {C:/Users/artur/Downloads/CPU_FINAL_V2/tb_CPU.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:22:37 on Jun 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/artur/Downloads/CPU_FINAL_V2" C:/Users/artur/Downloads/CPU_FINAL_V2/tb_CPU.v 
+# -- Compiling module tb_CPU
+# 
+# Top level modules:
+# 	tb_CPU
+# End time: 18:22:37 on Jun 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  tb_CPU
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" tb_CPU 
+# Start time: 18:22:38 on Jun 12,2024
+# Loading work.tb_CPU
+# Loading work.CPU
+# Loading work.instmem
+# Loading work.insReg
+# Loading work.controller
+# Loading work.PC
+# Loading work.muxB
+# Loading work.register_bank
+# Loading work.datamem
+# Loading work.muxA
+# Loading work.ALU
+# Loading work.arith
+# Loading work.logic
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (32) for port 'dataIM'. The port definition is at: C:/Users/artur/Downloads/CPU_FINAL_V2/instmem.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CPU/C1/a1 File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 30
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (32) for port 'outIM'. The port definition is at: C:/Users/artur/Downloads/CPU_FINAL_V2/instmem.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CPU/C1/a1 File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 30
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (32) for port 'insin'. The port definition is at: C:/Users/artur/Downloads/CPU_FINAL_V2/insReg.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CPU/C1/a2 File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 32
+# ** Warning: (vsim-3015) [PCDPC] - Port size (12) does not match connection size (1) for port 'execadd'. The port definition is at: C:/Users/artur/Downloads/CPU_FINAL_V2/PC.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CPU/C1/a4 File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 64
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'in1'. The port definition is at: C:/Users/artur/Downloads/CPU_FINAL_V2/muxB.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CPU/C1/a5 File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 67
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (12) for port 'in2'. The port definition is at: C:/Users/artur/Downloads/CPU_FINAL_V2/muxB.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CPU/C1/a5 File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 67
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (12) for port 'outB'. The port definition is at: C:/Users/artur/Downloads/CPU_FINAL_V2/muxB.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CPU/C1/a5 File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 67
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'reg_bank'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CPU/C1/reg_bank File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 69
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (12) for port 'write_address'. The port definition is at: C:/Users/artur/Downloads/CPU_FINAL_V2/register_bank.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CPU/C1/reg_bank File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 69
+# ** Warning: (vsim-3722) C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v(69): [TFMPC] - Missing connection for port 'write_enable'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'dataDM'. The port definition is at: C:/Users/artur/Downloads/CPU_FINAL_V2/datamem.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CPU/C1/a9 File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (12) for port 'addDM'. The port definition is at: C:/Users/artur/Downloads/CPU_FINAL_V2/datamem.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CPU/C1/a9 File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (12) for port 'in1'. The port definition is at: C:/Users/artur/Downloads/CPU_FINAL_V2/muxA.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CPU/C1/b1 File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 94
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (32) for port 'outALU'. The port definition is at: C:/Users/artur/Downloads/CPU_FINAL_V2/ALU.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CPU/C1/b2 File: C:/Users/artur/Downloads/CPU_FINAL_V2/CPU.v Line: 103
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (64) for port 'outau'. The port definition is at: C:/Users/artur/Downloads/CPU_FINAL_V2/arith.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CPU/C1/b2/a1 File: C:/Users/artur/Downloads/CPU_FINAL_V2/ALU.v Line: 19
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (64) for port 'outlu'. The port definition is at: C:/Users/artur/Downloads/CPU_FINAL_V2/logic.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CPU/C1/b2/l1 File: C:/Users/artur/Downloads/CPU_FINAL_V2/ALU.v Line: 20
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: artur  Hostname: LAPTOP-ARTURO  ProcessID: 5112
+#           Attempting to use alternate WLF file "./wlftmkgsmx".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftmkgsmx
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $finish    : C:/Users/artur/Downloads/CPU_FINAL_V2/tb_CPU.v(68)
+#    Time: 65 ns  Iteration: 0  Instance: /tb_CPU
+# 1
+# Break in Module tb_CPU at C:/Users/artur/Downloads/CPU_FINAL_V2/tb_CPU.v line 68
